@@ -806,7 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Với ngọn lửa sáng tạo không ngừng cháy bỏng và một trái tim luôn hướng về sự phát triển của cộng đồng công nghệ Việt Nam, Phạm Bảo Long không chỉ tập trung
   vào việc nâng cao kỹ năng cá nhân mà còn tích cực chia sẻ kiến thức, kinh nghiệm và hỗ trợ những người khác trên con đường chinh phục công nghệ. 
   Mỗi dự án mà Vinh thực hiện đều là một minh chứng cho khả năng giải quyết vấn đề sáng tạo, tinh thần tự học và khát khao được đóng góp những giá trị thiết thực cho xã hội.
-  Với những nỗ lực không mệt mỏi và tầm nhìn xa rộng, Đinh Duy Vinh đang từng bước khẳng định mình là một nguồn cảm hứng đầy hứa hẹn cho thế hệ trẻ Việt Nam, 
+  Với những nỗ lực không mệt mỏi và tầm nhìn xa rộng, Phạm Bảo Long đang từng bước khẳng định mình là một nguồn cảm hứng đầy hứa hẹn cho thế hệ trẻ Việt Nam, 
   những người mang trong mình tình yêu và đam mê bất tận với thế giới của những dòng code và công nghệ tiên tiến.
 
   Những dòng code không chỉ là những ký tự vô tri mà còn là ngôn ngữ để Long thể hiện sự sáng tạo, kết nối với thế giới và hiện thực hóa những ý tưởng độc đáo. 
