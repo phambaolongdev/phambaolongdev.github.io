@@ -2813,3 +2813,18 @@ body.dark .global_shapes {
         margin-top: 0.5rem;
     }
 }
+#languageBtn {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+#languageBtn::before,
+#languageBtn::after {
+  animation: none !important;
+}
+
+#languageBtn i {
+  animation: none !important;
+  transition: none !important;
+}
