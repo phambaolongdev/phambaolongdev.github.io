@@ -316,11 +316,6 @@ document.addEventListener("DOMContentLoaded", () => {
         element.dataset.original = element.placeholder;
       } else {
         element.dataset.original = element.innerHTML;
-        if (currentLanguage === "vi") {
-    languageIcon.textContent = "🇻🇳";
-} else {
-    languageIcon.textContent = "🇺🇸";
-}
       }
     }
   });
