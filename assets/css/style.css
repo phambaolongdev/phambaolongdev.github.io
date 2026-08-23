@@ -1,4 +1,3 @@
-
 /*=============== LOCAL FONTS ===============*/
 @font-face {
     font-family: "Poppins";
@@ -2812,19 +2811,4 @@ body.dark .global_shapes {
     .certificate__popup-date {
         margin-top: 0.5rem;
     }
-}
-#languageBtn {
-  animation: none !important;
-  transition: none !important;
-  transform: none !important;
-}
-
-#languageBtn::before,
-#languageBtn::after {
-  animation: none !important;
-}
-
-#languageBtn i {
-  animation: none !important;
-  transition: none !important;
 }
