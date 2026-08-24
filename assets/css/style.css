@@ -114,7 +114,7 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
