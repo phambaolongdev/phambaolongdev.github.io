@@ -1,7 +1,7 @@
 /*
 =========================================================
     Source by PBL
-    PBL | HOME Source v1.0
+    PBL | HOME Source v2.0
     View source đi trước khi bị đóng :>
 =========================================================
 */
@@ -1104,3 +1104,14 @@ document.querySelectorAll(".projects__button").forEach(button => {
         audio.play().catch(() => {});
     });
 });
+const chatbotToggler = document.getElementById("chatbot-toggler");
+
+if (chatbotToggler) {
+    const chatbotSound = new Audio("./assets/sounds/botclick.mp3");
+    chatbotSound.volume = 0.5;
+
+    chatbotToggler.addEventListener("click", () => {
+        chatbotSound.currentTime = 0;
+        chatbotSound.play().catch(() => {});
+    });
+}
