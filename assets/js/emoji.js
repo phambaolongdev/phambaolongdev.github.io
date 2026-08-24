@@ -1,3 +1,11 @@
+/*
+=========================================================
+    Source by PBL
+    PBL | HOME Source v2.0
+    View source đi trước khi bị đóng :>
+=========================================================
+*/
+
 ! function() {
     function e(e, t, r, n) {
         Object.defineProperty(e, t, {
