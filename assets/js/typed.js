@@ -1,3 +1,11 @@
+/*
+=========================================================
+    Source by PBL
+    PBL | HOME Source v1.0
+    View source đi trước khi bị đóng :>
+=========================================================
+*/
+
 ! function(t, s) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = s() : "function" == typeof define && define.amd ? define(s) : (t || self).Typed = s()
 }(this, function() {
