@@ -293,7 +293,7 @@ header.scrolled {
     transition: all 0.3s ease;
     background-size: cover;
     background-position: center;
-    background-image: url("./assets/img/background/us.webp");
+    background-image: url("https://files.catbox.moe/ng073c.webp");
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -306,7 +306,7 @@ header.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("./assets/img/background/vn.webp");
+    background-image: url("https://files.catbox.moe/8ejuam.webp");
     background-size: cover;
     background-position: center;
     opacity: 0;
