@@ -556,74 +556,24 @@ document.addEventListener("DOMContentLoaded", () => {
   //             star.style.animationDuration = `${duration}s`;
   //             star.addEventListener('animationiteration', function() {
   //                 this.style.left = `${Math.random() * document.body.scrollWidth}px`;
-  //                 this.style.top = `${Math.random() * document.body.scrollHeight}px`;
-  //                 const newMoveX = (Math.random() - 0.5) * MAX_MOVEMENT;
-  //                 const newMoveY = (Math.random() - 0.5) * MAX_MOVEMENT;
-  //                 this.style.setProperty('--move-x', `${newMoveX}px`);
-  //                 this.style.setProperty('--move-y', `${newMoveY}px`);
+  //                this.style.top = `${Math.random() * document.body.scrollHeight}px`;
+  //               const newMoveX = (Math.random() - 0.5) * MAX_MOVEMENT;
+  //                const newMoveY = (Math.random() - 0.5) * MAX_MOVEMENT;
+  //              this.style.setProperty('--move-x', `${newMoveX}px`);
+  //               this.style.setProperty('--move-y', `${newMoveY}px`);
   //             });
   //             fragment.appendChild(star);
   //         }
   //         starsContainer.appendChild(fragment);
-  //         const resizeObserver = new ResizeObserver(() => {
-  //             bodyWidth = document.body.scrollWidth;
-  //             bodyHeight = document.body.scrollHeight;
-  //             starsContainer.style.height = `${bodyHeight}px`;
-  //         });
-  //         resizeObserver.observe(document.body);
-  //     }, 500);
-  // }
-  // setTimeout(initStarAnimation, 300);
-
-  // Initialize EmailJS with contact form
-  document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        Swal.fire({
-          icon: "warning",
-          title: "Vui lòng xác minh!",
-          text: "Bạn cần xác minh reCAPTCHA trước khi gửi.",
-          confirmButtonText: "OK",
-        });
-        return;
-      }
-
-      const now = new Date();
-      const timeString = now.toLocaleString("vi-VN").replace(",", "");
-      document.getElementById("time").value = timeString;
-      document.getElementById("page-url").value = window.location.hostname;
-
-      const submitButton = this.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.innerHTML;
-      submitButton.disabled = true;
-      submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG GỬI...';
-
-      emailjs.sendForm("service_swfnmkm", "template_n0r8ice", this).then(function (response) {
-          Swal.fire({
-            icon: "success",
-            title: "Thành công!",
-            text: "Tin nhắn đã được gửi thành công!",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          document.getElementById("contact-form").reset();
-          grecaptcha.reset(); // reset reCAPTCHA sau khi gửi
-        })
-        .catch(function (error) {
-          Swal.fire({
-            icon: "error",
-            title: "Lỗi!",
-            text: "Không gửi được tin nhắn. Vui lòng thử lại.",
-            confirmButtonText: "OK",
-          });
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.innerHTML = originalButtonText;
-        });
-    });
+  //        const resizeObserver = new ResizeObserver(() => {
+  //            bodyWidth = document.body.scrollWidth;
+  //            bodyHeight = document.body.scrollHeight;
+  //            starsContainer.style.height = `${bodyHeight}px`;
+  //        });
+  //       resizeObserver.observe(document.body);
+  //    }, 500);
+  //   }
+   setTimeout(initStarAnimation, 300);
 
   // Chatbot functionality
   const chatBody = document.querySelector(".chat-body");
@@ -698,7 +648,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Chào mừng bạn đến với trợ lý ảo được xây dựng dựa trên thông tin về Phạm Bảo Long, 
   một tài năng trẻ đầy triển vọng trong lĩnh vực Công nghệ Thông tin. Tôi được tạo ra để cung cấp cho bạn cái nhìn toàn diện về con người,
   hành trình học tập, những kỹ năng chuyên môn ấn tượng và vô số dự án sáng tạo mà Long đã và đang thực hiện.
-  Hãy khám phá thế giới công nghệ đầy đam mê của Vinh qua những thông tin chi tiết dưới đây.
+  Hãy khám phá thế giới công nghệ đầy đam mê của Long qua những thông tin chi tiết dưới đây.
 
   Chi tiết:
 
@@ -706,17 +656,17 @@ document.addEventListener("DOMContentLoaded", () => {
   Phạm Bảo Long từ nhỏ đã sớm bộc lộ sự tò mò và niềm yêu thích đặc biệt đối với các thiết bị điện tử.
   Những món đồ quen thuộc trong gia đình như chiếc vợt bắt muỗi phát ra tia điện, chiếc máy cassette
   cũ kỹ với những cuộn băng nhạc, hay những chiếc điện thoại "cục gạch" bền bỉ đã trở thành nguồn cảm hứng bất tận,
-  thôi thúc Vinh khám phá cấu trúc bên trong và nguyên lý hoạt động kỳ diệu của chúng.
-  Bước ngoặt thực sự đến với Vinh vào những năm cuối cấp ba, khi đại dịch COVID-19 ập đến,
+  thôi thúc Long khám phá cấu trúc bên trong và nguyên lý hoạt động kỳ diệu của chúng.
+  Bước ngoặt thực sự đến với Long vào những năm cuối cấp ba, khi đại dịch COVID-19 ập đến,
   mang theo những thay đổi lớn trong cuộc sống. Trong khoảng thời gian giãn cách xã hội,
-  thay vì cảm thấy nhàm chán, Vinh đã tìm thấy một cơ hội quý giá để khám phá thế giới lập trình.
+  thay vì cảm thấy nhàm chán, Long đã tìm thấy một cơ hội quý giá để khám phá thế giới lập trình.
   Anh tự mày mò học HTML và CSS thông qua các khóa học trực tuyến miễn phí, đặt nền móng cho hành trình chinh phục những dòng code.
-  Sự đam mê và tinh thần tự học không ngừng đã dẫn lối Vinh đến với JavaScript và PHP, mở ra những cánh cửa mới trong thế giới phát triển web.
-  Những dự án nhỏ ban đầu chính là "sân tập" lý tưởng để Vinh rèn luyện kỹ năng và hiện thực hóa những kiến thức đã học.
+  Sự đam mê và tinh thần tự học không ngừng đã dẫn lối Long đến với JavaScript và PHP, mở ra những cánh cửa mới trong thế giới phát triển web.
+  Những dự án nhỏ ban đầu chính là "sân tập" lý tưởng để Long rèn luyện kỹ năng và hiện thực hóa những kiến thức đã học.
   Từ việc xây dựng một trang web cá nhân đơn giản, nơi anh chia sẻ những suy nghĩ và sở thích,
   đến việc phát triển những công cụ nhỏ nhưng hữu ích cho cộng đồng, mỗi dự án đều là một bước tiến quan trọng trên con
   đường trở thành một lập trình viên chuyên nghiệp. Những trải nghiệm thực tế này không chỉ củng cố kiến thức mà còn nuôi dưỡng ngọn lửa đam mê công nghệ trong trái tim Long.
-  Khi chính thức trở thành sinh viên ngành Công nghệ Thông tin tại Đại học Duy Tân, Đà Nẵng, Vinh nhanh chóng chứng minh được năng lực và sự nhiệt huyết của mình.
+  Khi chính thức trở thành sinh viên ngành Công nghệ Thông tin tại Đại học Duy Tân, Đà Nẵng, Long nhanh chóng chứng minh được năng lực và sự nhiệt huyết của mình.
   Anh không chỉ là một sinh viên chăm chỉ mà còn là một lập trình viên đa năng, có khả năng thích ứng và học hỏi nhanh chóng.
   Với thế mạnh ở mảng Back end, Long tự tin làm chủ ngôn ngữ PHP (90%), sử dụng nó để thiết kế và xây dựng các API mạnh mẽ, 
   đảm bảo khả năng giao tiếp và trao đổi dữ liệu hiệu quả giữa các hệ thống. Anh cũng có kinh nghiệm sâu sắc trong việc xử lý dữ liệu,
@@ -737,23 +687,23 @@ document.addEventListener("DOMContentLoaded", () => {
   Không chỉ tập trung vào "phía sau hậu trường", Long còn thể hiện sự linh hoạt và khả năng sáng tạo ở mảng Front end. 
   Anh thành thạo bộ ba nền tảng của web là HTML5, CSS3 và JavaScript (ES6),
   cho phép anh xây dựng những trang web có cấu trúc rõ ràng, giao diện đẹp mắt và tương tác mượt mà.
-  Để tăng tốc quá trình phát triển giao diện, Vinh còn sử dụng thành thạo các framework và thư viện hiện đại như Tailwind CSS,
+  Để tăng tốc quá trình phát triển giao diện, Long còn sử dụng thành thạo các framework và thư viện hiện đại như Tailwind CSS,
   một framework CSS utility-first giúp tạo giao diện nhanh chóng và tùy biến cao, và Bootstrap, một framework CSS phổ biến với nhiều thành phần UI dựng sẵn.
 
-  Để hiện thực hóa những ý tưởng thiết kế độc đáo, Vinh còn sử dụng thành thạo Figma (30%) và Photoshop, 
+  Để hiện thực hóa những ý tưởng thiết kế độc đáo, Long còn sử dụng thành thạo Figma (30%) và Photoshop, 
   từ việc tạo wireframe, prototype đến thiết kế giao diện người dùng (UI) và trải nghiệm người dùng (UX) trực quan và hấp dẫn.
 
-  "Bộ sưu tập" ngôn ngữ lập trình của Vinh không dừng lại ở đó. Anh còn có kiến thức và kinh nghiệm làm việc với C/C++,
+  "Bộ sưu tập" ngôn ngữ lập trình của Long không dừng lại ở đó. Anh còn có kiến thức và kinh nghiệm làm việc với C/C++,
   nền tảng cho nhiều hệ thống và ứng dụng hiệu suất cao; Java, một ngôn ngữ lập trình đa nền tảng mạnh mẽ;
   Pascal, ngôn ngữ lập trình cơ bản giúp xây dựng tư duy lập trình; và scripting Shell, công cụ mạnh mẽ để tự động hóa các tác vụ trên hệ thống.
 
   Để quản lý mã nguồn và cộng tác hiệu quả trong các dự án, Long sử dụng thành thạo Git và GitHub,
   các công cụ quản lý phiên bản phổ biến. Môi trường phát triển chính của anh là Visual Studio Code (VS Code),
-  một trình soạn thảo code mạnh mẽ và linh hoạt. Bên cạnh đó, Vinh cũng làm việc hiệu quả với bộ công cụ văn phòng Microsoft Office.
+  một trình soạn thảo code mạnh mẽ và linh hoạt. Bên cạnh đó, Long cũng làm việc hiệu quả với bộ công cụ văn phòng Microsoft Office.
 
-  Những kiến thức và kỹ năng đa dạng của Vinh đã được thể hiện rõ nét qua hàng loạt các dự án cá nhân đầy sáng tạo và mang tính ứng dụng cao.
+  Những kiến thức và kỹ năng đa dạng của Long đã được thể hiện rõ nét qua hàng loạt các dự án cá nhân đầy sáng tạo và mang tính ứng dụng cao.
   Anh đã tự mình phát triển một hệ thống giao diện quản lý sinh viên nhỏ gọn bằng Java, thể hiện khả năng xây dựng ứng dụng desktop.
-  Để rèn luyện tư duy logic và kỹ năng lập trình Front end, Vinh đã tạo ra những web game giải trí với các mini game JavaScript thú vị.
+  Để rèn luyện tư duy logic và kỹ năng lập trình Front end, Long đã tạo ra những web game giải trí với các mini game JavaScript thú vị.
 
   Với mong muốn đóng góp cho cộng đồng, Long đã ấp ủ và xây dựng website chống lừa đảo tích hợp dữ liệu
   báo cáo từ người dùng, tạo ra một nền tảng để mọi người cùng nhau cảnh giác và phòng tránh các hành vi lừa đảo trực tuyến.
@@ -772,7 +722,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Long cũng thể hiện sự nhạy bén với các xu hướng công nghệ mới bằng việc phát triển các API tải video TikTok và Facebook không watermark,
   đáp ứng nhu cầu của nhiều người dùng. Anh còn xây dựng web chuyển đổi mã xác thực hai yếu tố (2FA), tăng cường bảo mật cho tài khoản trực tuyến.
-  Đặc biệt, Vinh còn khám phá lĩnh vực bảo mật ứng dụng di động với
+  Đặc biệt, Long còn khám phá lĩnh vực bảo mật ứng dụng di động với
   việc tạo ra module iOS "mở khóa" các tính năng Pro/Premium của ứng dụng Locket Gold,... thể hiện sự tò mò và khả năng nghiên cứu sâu rộng.
 
   Ngoài ra, Long còn là một "fan cứng" của tự động hóa và đã phát triển vô số bot Telegram
@@ -788,9 +738,9 @@ document.addEventListener("DOMContentLoaded", () => {
   phambaolongdev.github.io: Trang web tổng hợp thông tin cá nhân, profile và các dự án nổi bật của Long.
   phambaolongdev.github.io: Trang thông tin thanh toán (có thể được sử dụng cho các mục đích liên hệ hoặc hỗ trợ).
   upanh.vercel.app: Ứng dụng web đơn giản để tải ảnh lên Imgur một cách nhanh chóng.
-  crusssh.vercel.app: Một không gian trực tuyến cá nhân, có thể là nơi Vinh thử nghiệm các ý tưởng hoặc chia sẻ những sở thích cá nhân.
+  crusssh.vercel.app: Một không gian trực tuyến cá nhân, có thể là nơi Long thử nghiệm các ý tưởng hoặc chia sẻ những sở thích cá nhân.
   thoitiet2025.vercel.app: Trang web cung cấp thông tin dự báo thời tiết trực tuyến, tích hợp dữ liệu từ OpenWeather API.
-  baomoi.com: Một blog thông tin, nơi Vinh có thể chia sẻ kiến thức, quan điểm hoặc những thông tin hữu ích khác.
+  baomoi.com: Một blog thông tin, nơi Long có thể chia sẻ kiến thức, quan điểm hoặc những thông tin hữu ích khác.
   listgames.vercel.app: Một trang web tổng hợp danh sách các game giải trí, có thể là dự án cá nhân hoặc một nguồn tài liệu tham khảo.
   web-qrcode.vercel.app: Một công cụ trực tuyến giúp người dùng tạo mã QR code một cách dễ dàng và nhanh chóng.
   Và còn nhiều trang web và ứng dụng khác đang được Long ấp ủ và phát triển.
@@ -805,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Telegram: t.me/pbl_96 - Kênh liên lạc cá nhân và chia sẻ thông tin nhanh chóng.
   Với ngọn lửa sáng tạo không ngừng cháy bỏng và một trái tim luôn hướng về sự phát triển của cộng đồng công nghệ Việt Nam, Phạm Bảo Long không chỉ tập trung
   vào việc nâng cao kỹ năng cá nhân mà còn tích cực chia sẻ kiến thức, kinh nghiệm và hỗ trợ những người khác trên con đường chinh phục công nghệ. 
-  Mỗi dự án mà Vinh thực hiện đều là một minh chứng cho khả năng giải quyết vấn đề sáng tạo, tinh thần tự học và khát khao được đóng góp những giá trị thiết thực cho xã hội.
+  Mỗi dự án mà Long thực hiện đều là một minh chứng cho khả năng giải quyết vấn đề sáng tạo, tinh thần tự học và khát khao được đóng góp những giá trị thiết thực cho xã hội.
   Với những nỗ lực không mệt mỏi và tầm nhìn xa rộng, Phạm Bảo Long đang từng bước khẳng định mình là một nguồn cảm hứng đầy hứa hẹn cho thế hệ trẻ Việt Nam, 
   những người mang trong mình tình yêu và đam mê bất tận với thế giới của những dòng code và công nghệ tiên tiến.
 
@@ -1088,4 +1038,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#file-upload").addEventListener("click", (e) => fileInput.click());
   chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
   closeChatbot.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+});
+  document.querySelectorAll(".projects__button").forEach(button => {
+    button.addEventListener("click", () => {
+        const audio = new Audio("./assets/sounds/click.mp3");
+        audio.volume = 0.5;
+        audio.play().catch(() => {});
+    });
 });
