@@ -643,8 +643,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatbotToggler = document.querySelector("#chatbot-toggler");
   const closeChatbot = document.querySelector("#close-chatbot");
   const scrollToBottomBtn = document.querySelector("#scroll-to-bottom");
-  const API_KEY = "AQ.Ab8RN6LZs9KC2a6BKWff5zQxmfM88O_bL1-hsoZlFyqP3Lb43Q";
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+  const API_KEY = "AQ.Ab8RN6JEMdxDVmxTzC7Cd-euDHfjnFyPNfjJC2m6uOKrftnHDQ";
+
+  const API_URL =
+     "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent";
 
   const userData = {
     message: null,
@@ -902,26 +904,80 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: chatHistory,
-      }),
-    };
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-goog-api-key": API_KEY,
+  },
+  body: JSON.stringify({
+    system_instruction: {
+      parts: [
+        {
+          text: `Mình là trợ lý ảo của Phạm Bảo Long.
+
+Hãy trả lời dựa trên thông tin về Phạm Bảo Long trong website.
+Nếu câu hỏi không liên quan đến Phạm Bảo Long, vẫn có thể trả lời bằng kiến thức chung.
+
+Luôn trả lời bằng tiếng Việt nếu người dùng sử dụng tiếng Việt.
+Phong cách thân thiện, tự nhiên, ngắn gọn và dễ hiểu.`,
+        },
+      ],
+    },
+
+    contents: chatHistory,
+  }),
+};
 
     try {
-      const response = await fetch(API_URL, requestOptions);
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error.message);
-      let apiResponseText = data.candidates[0].content.parts[0].text;
-      apiResponseText = apiResponseText.replace(/\n+$/, "");
-      let htmlResponse = "";
+  const response = await fetch(API_URL, requestOptions);
+  const data = await response.json();
 
-      if (/<[a-z][\s\S]*>/i.test(apiResponseText)) {
-        htmlResponse = markdownToHTML(escapeHTML(apiResponseText));
-      } else {
-        htmlResponse = markdownToHTML(apiResponseText);
-      }
+  // Kiểm tra lỗi từ Gemini
+  if (!response.ok) {
+    throw new Error(
+      data?.error?.message ||
+      `Gemini API lỗi HTTP ${response.status}`
+    );
+  }
+
+  // Lấy nội dung trả về an toàn
+  let apiResponseText =
+    data?.candidates?.[0]?.content?.parts
+      ?.map(part => part?.text || "")
+      .join("")
+      .trim();
+
+  // Nếu Gemini không trả về text
+  if (!apiResponseText) {
+    console.error("Gemini API response:", data);
+
+    if (data?.promptFeedback?.blockReason) {
+      throw new Error(
+        `Gemini đã chặn yêu cầu: ${data.promptFeedback.blockReason}`
+      );
+    }
+
+    if (data?.candidates?.[0]?.finishReason) {
+      throw new Error(
+        `Gemini không tạo được câu trả lời: ${data.candidates[0].finishReason}`
+      );
+    }
+
+    throw new Error("Gemini không trả về câu trả lời.");
+  }
+
+  // Xóa xuống dòng thừa cuối câu
+  apiResponseText = apiResponseText.replace(/\n+$/, "");
+
+  let htmlResponse = "";
+
+  if (/<[a-z][\s\S]*>/i.test(apiResponseText)) {
+    htmlResponse = markdownToHTML(
+      escapeHTML(apiResponseText)
+    );
+  } else {
+    htmlResponse = markdownToHTML(apiResponseText);
+  }
 
       notificationSound.currentTime = 0;
       notificationSound.play().catch(() => {});
