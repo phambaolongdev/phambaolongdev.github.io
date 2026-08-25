@@ -643,10 +643,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatbotToggler = document.querySelector("#chatbot-toggler");
   const closeChatbot = document.querySelector("#close-chatbot");
   const scrollToBottomBtn = document.querySelector("#scroll-to-bottom");
-  const API_KEY = "AQ.Ab8RN6JEMdxDVmxTzC7Cd-euDHfjnFyPNfjJC2m6uOKrftnHDQ";
+  const API_KEY = "AQ.Ab8RN6K_Ybwm9YBtmWfn8-7yH55LIj1GhRhtLwdkV9v5okU-zw";
 
   const API_URL =
-     "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.7-flash:generateContent";
+     "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
 
   const userData = {
     message: null,
