@@ -674,7 +674,6 @@ var ScrollReveal = function() {
 8
     "use strict";
 9
-​
 10
     function e(e, t, n) {
 11
