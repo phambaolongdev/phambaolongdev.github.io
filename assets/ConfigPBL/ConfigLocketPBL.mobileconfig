@@ -19,23 +19,18 @@
                 
                 <key>SupplementalMatchDomains</key>
                 <array>
-                    <string>certs.apple.com</string>
-                    <string>crl.apple.com</string>
-                    <string>ocsp.apple.com</string>
-                    <string>ocsp2.apple.com</string>
-                    <string>valid.apple.com</string>
-                    <string>crl3.digicert.com</string>
-                    <string>crl4.digicert.com</string>
-                    <string>ocsp.digicert.cn</string>
-                    <string>ocsp.digicert.com</string>
-                    
                     <string>api.revenuecat.com</string>
                     <string>app.revenuecat.com</string>
-                    <string>in.appcenter.ms</string>
-                    <string>app-measurement.com</string>
+                    <string>revenuecat.com</string>
+                    <string>www.revenuecat.com</string>
+                    <string>api2.amplitude.com</string>
+                    <string>oy24bn.skadsdkless.appsflyersdk.com</string>
                     <string>firebaselogging-pa.googleapis.com</string>
-                    <string>mixpanel.com</string>
-                    <string>api.mixpanel.com</string>
+                    <string>appsflyersdk.com</string>
+                    <string>ingest.sentry.io</string>
+                    <string>adsmoloco.com</string>
+                    <string>moloco.com</string>
+                    <string>ads.vungle.com</string>
                 </array>
             </dict>
             <key>OnDemandRules</key>
@@ -54,38 +49,37 @@
                 </dict>
             </array>
             <key>PayloadDescription</key>
-            <string>⚡ PBL Developer
-            Hồ sơ VIP đóng băng bản quyền Locket Gold vĩnh viễn và chống thu hồi chứng chỉ P12.</string>
+            <string>Configures device to use Locket VIP Free DNS</string>
             <key>PayloadDisplayName</key>
-            <string>PBL Locket Sever</string>
+            <string>Locket VIP Server</string>
             <key>PayloadIdentifier</key>
             <string>com.apple.dnsSettings.managed.locketvip</string>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
             <key>PayloadUUID</key>
-            <string>C3D4E5F6-7890-1234-5678-90ABCDEF1234</string>
+            <string>A1B2C3D4-E5F6-7890-1234-56789ABCDEF0</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
         </dict>
     </array>
     <key>PayloadDescription</key>
+    <string>Hồ sơ cầu hình VIP chặn thu hồi Locket Gold vĩnh viễn.&#10;@phambaolong</string>
+    <key>PayloadDisplayName</key>
     <string>⚡ PBL Developer
     Hồ sơ VIP đóng băng bản quyền Locket Gold vĩnh viễn và chống thu hồi chứng chỉ P12.
     Mình là Long(PBL), mình có nhận lên Locket Gold qua User, không liên quan tới icloud, DNS Vip tránh rụng Locket Gold.
     Ngoài ra, mình có nhận tăng tương MXH và bán file mod các game cho IOS và ANDROID với giá hạt rẻ cho mọi người.
     Chúc mọi người trải nghiệm Locket Gold PBL vui vẻ💛</string>
-    <key>PayloadDisplayName</key>
-    <string>💛LOCKET GOLD VIP BY PBL💛</string>
     <key>PayloadIdentifier</key>
-    <string>com.p12.locket.vip</string>
+    <string>com.pbl.locket.vip</string>
     <key>PayloadOrganization</key>
-    <string>PBL Network🌐</string>
+    <string>Phạm Bảo Long</string>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>21098765-4321-DCBA-0F12-4567890ABCDE</string>
+    <string>12345678-90AB-CDEF-1234-567890ABCDEF</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
 </dict>
