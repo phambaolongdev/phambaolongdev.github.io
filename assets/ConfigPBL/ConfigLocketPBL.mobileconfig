@@ -51,7 +51,7 @@
             <key>PayloadDescription</key>
             <string>Configures device to use Locket VIP Free DNS</string>
             <key>PayloadDisplayName</key>
-            <string>Locket VIP Server</string>
+            <string>PBL Locket VIP Server</string>
             <key>PayloadIdentifier</key>
             <string>com.apple.dnsSettings.managed.locketvip</string>
             <key>PayloadType</key>
@@ -63,13 +63,13 @@
         </dict>
     </array>
     <key>PayloadDescription</key>
-    <string>Hồ sơ cầu hình VIP chặn thu hồi Locket Gold vĩnh viễn.&#10;@phambaolong</string>
-    <key>PayloadDisplayName</key>
     <string>⚡ PBL Developer
     Hồ sơ VIP đóng băng bản quyền Locket Gold vĩnh viễn và chống thu hồi chứng chỉ P12.
     Mình là Long(PBL), mình có nhận lên Locket Gold qua User, không liên quan tới icloud, DNS Vip tránh rụng Locket Gold.
     Ngoài ra, mình có nhận tăng tương MXH và bán file mod các game cho IOS và ANDROID với giá hạt rẻ cho mọi người.
     Chúc mọi người trải nghiệm Locket Gold PBL vui vẻ💛</string>
+    <key>PayloadDisplayName</key>
+    <string>⚡ PBL Developer ⚡️</string>
     <key>PayloadIdentifier</key>
     <string>com.pbl.locket.vip</string>
     <key>PayloadOrganization</key>
