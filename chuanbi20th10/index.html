@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <title>Một điều đặc biệt dành cho Yến 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: 'Quicksand', sans-serif;
+      color: #743c59;
+      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+      text-align: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 440px;
+      padding: 35px 22px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 15px 45px rgba(190, 100, 140, 0.15);
+    }
+
+    .heart {
+      font-size: 52px;
+      margin-bottom: 16px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 26px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .time-box {
+      padding: 15px 4px;
+      background: #fff0f5;
+      border-radius: 15px;
+    }
+
+    .number {
+      display: block;
+      font-size: 27px;
+      font-weight: 700;
+      color: #d45d91;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .unit {
+      font-size: 11px;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .note {
+      font-size: 12px;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+
+    @media (max-width: 360px) {
+      .card { padding: 28px 14px; }
+      .number { font-size: 22px; }
+      h1 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .heart { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="heart">💗</div>
+
+    <h1>Một điều đặc biệt dành cho Yến</h1>
+
+    <p class="description">
+      Có một điều Long muốn gửi đến Yến.<br>
+      Cùng chờ đến thời khắc đặc biệt nhé! 🌷
+    </p>
+
+    <div class="countdown" aria-label="Thời gian đếm ngược">
+      <div class="time-box">
+        <span class="number" id="days">00</span>
+        <span class="unit">Ngày</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="hours">00</span>
+        <span class="unit">Giờ</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="minutes">00</span>
+        <span class="unit">Phút</span>
+      </div>
+      <div class="time-box">
+        <span class="number" id="seconds">00</span>
+        <span class="unit">Giây</span>
+      </div>
+    </div>
+
+    <p class="note" id="status">
+      Thời khắc đặc biệt sẽ bắt đầu lúc 00:04 ngày 20/10/2026 💌
+    </p>
+  </main>
+
+  <script>
+    // Mốc mở cửa: 00:04 ngày 20/10/2026, giờ Việt Nam UTC+7
+    const unlockTime = new Date(
+      "2026-10-19T23:35:00+07:00"
+    ).getTime();
+
+    // Website chính
+    const targetURL = "https://phambaolongdev.github.io/20th10";
+
+    const elements = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      minutes: document.getElementById("minutes"),
+      seconds: document.getElementById("seconds"),
+      status: document.getElementById("status")
+    };
+
+    let redirected = false;
+
+    function updateCountdown() {
+      const remaining = unlockTime - Date.now();
+
+      // Đến giờ thì tự động chuyển trang
+      if (remaining <= 0) {
+        if (!redirected) {
+          redirected = true;
+          elements.status.textContent =
+            "Đã đến giờ rồi! Đang mở món quà dành cho Yến 💗";
+          window.location.replace(targetURL);
+        }
+        return;
+      }
+
+      const days = Math.floor(remaining / 86400000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      const seconds = Math.floor((remaining % 60000) / 1000);
+
+      elements.days.textContent = String(days).padStart(2, "0");
+      elements.hours.textContent = String(hours).padStart(2, "0");
+      elements.minutes.textContent = String(minutes).padStart(2, "0");
+      elements.seconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 250);
+  </script>
+</body>
+</html>
